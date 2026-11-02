@@ -3,12 +3,15 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     WEBHOOK_SECRET: str
-    API_KEY: str
-    API_SECRET: str
-    TESTNET: bool = True
-    DEFAULT_LEVERAGE: int = 5
+    PAPER_MODE: bool = True
     RISK_PERCENT: float = 0.7
-    MAX_POSITIONS: int = 3
+    DEFAULT_LEVERAGE: int = 5
+    MAX_POSITIONS: int = 5
+
+    # Te pola zostawiamy opcjonalne (na przyszłość)
+    API_KEY: str | None = None
+    API_SECRET: str | None = None
+    TESTNET: bool = True
     TELEGRAM_BOT_TOKEN: str | None = None
     TELEGRAM_CHAT_ID: str | None = None
 
